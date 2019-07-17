@@ -2,7 +2,12 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
-    filename: "styles.css",
+    filename: "styles.css", //"[name].[content].css"
+    disable: process.env.NODE_ENV === "development"
+});
+
+const extractLess = new ExtractTextPlugin({
+    filename: 'styles.css',
     disable: process.env.NODE_ENV === "development"
 });
 
@@ -38,7 +43,7 @@ module.exports = {
                     ],
                     fallback: 'style-loader'
                 })
-            }
+            },
             // {
             //     test: /\.scss$/,
             //     use:[{
@@ -52,9 +57,23 @@ module.exports = {
             //         }
             //     ]
             // }
+            {
+                test: /\.less$/,
+                use: extractLess.extract({
+                    use:[
+                        {
+                            loader: "css-loader"
+                        },{
+                            loader: "less-loader"
+                        }
+                    ],
+                    fallback: "style-loader"
+                })
+            }
         ]
     },
     plugins:[
-        extractSass
+        extractSass,
+        extractLess
     ]
 }
