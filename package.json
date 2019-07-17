@@ -18,11 +18,13 @@
   },
   "homepage": "https://github.com/JDshalio88/webpack#readme",
   "devDependencies": {
+    "autoprefixer": "^9.6.1",
     "css-loader": "^3.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.3",
@@ -30,5 +32,10 @@
   },
   "dependencies": {
     "lodash": "^4.17.14"
-  }
+  },
+  "browserslist": [
+    "iOS >= 8",
+    "Firefox >= 20",
+    "Android > 4.4"
+  ]
 }
