@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "lint": "eslint src/**/*.js --fix"
   },
   "repository": {
     "type": "git",
@@ -18,27 +19,15 @@
   },
   "homepage": "https://github.com/JDshalio88/webpack#readme",
   "devDependencies": {
-    "autoprefixer": "^9.6.1",
-    "css-loader": "^3.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.0",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "file-loader": "^4.0.0",
-    "less": "^3.9.0",
-    "less-loader": "^5.0.0",
-    "node-sass": "^4.12.0",
-    "postcss-loader": "^3.0.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
+    "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.6"
   },
   "dependencies": {
     "lodash": "^4.17.14"
-  },
-  "browserslist": [
-    "iOS >= 8",
-    "Firefox >= 20",
-    "Android > 4.4"
-  ]
+  }
 }
